@@ -87,7 +87,6 @@ public class WhatsAppAiService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(metaAccessToken);
 
-        // Monta o corpo da mensagem exigido pela Meta Cloud API
         Map<String, Object> body = new HashMap<>();
         body.put("messaging_product", "whatsapp");
         body.put("to", recipientPhoneNumber);
@@ -100,7 +99,8 @@ public class WhatsAppAiService {
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);
 
         try {
-            restTemplate.postForObject(url, entity, String.class);
+            String response = restTemplate.postForObject(url, entity, String.class);
+            System.out.println("RESPOSTA DA META AO ENVIAR: " + response);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("ERRO DETALHADO AO ENVIAR WHATSAPP: " + e.getMessage());
