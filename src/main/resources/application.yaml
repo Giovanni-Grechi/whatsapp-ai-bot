@@ -11,3 +11,6 @@ bot:
     system-prompt: >
       ${AI_SYSTEM_PROMPT:Você é um assistente virtual de atendimento no WhatsApp.
       Responda sempre de forma curta, amigável e direta.}
+  meta:
+    access-token: ${META_ACCESS_TOKEN:}
+    phone-number-id: ${PHONE_NUMBER_ID:}
