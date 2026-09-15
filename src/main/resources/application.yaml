@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: whatsapp-ai-bot
+
+server:
+  port: 8080
+
+bot:
+  ai:
+    api-key: ${OPENAI_API_KEY:cole_sua_chave_aqui_para_testes_locais}
+    system-prompt: >
+      ${AI_SYSTEM_PROMPT:Você é um assistente virtual de atendimento no WhatsApp.
+      Responda sempre de forma curta, amigável e direta.}
