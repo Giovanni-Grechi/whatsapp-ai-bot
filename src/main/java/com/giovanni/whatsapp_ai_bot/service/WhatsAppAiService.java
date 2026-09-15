@@ -103,7 +103,7 @@ public class WhatsAppAiService {
             restTemplate.postForObject(url, entity, String.class);
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Erro ao enviar mensagem de volta para o WhatsApp.");
+            System.err.println("ERRO DETALHADO AO ENVIAR WHATSAPP: " + e.getMessage());
         }
     }
 }
